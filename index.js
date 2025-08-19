@@ -24,18 +24,18 @@ async function context({ req }) {
   }
 
   try {
-    const user = jwt.verify(token, SECRET); // verify token
-    return { user }; // available in resolvers
+    const user = jwt.verify(token, SECRET); 
+    return { user }; 
   } catch (err) {
     throw new Error("Unauthorized - invalid token");
   }
 }
 
-console.log("Your token:", generateToken()); // JWT string for testing
+console.log("Your token:", generateToken()); 
 
 const { url } = await startStandaloneServer(server, {
-  context, // add context here
+  context, 
   listen: { port: 4000 },
 });
 
-console.log(`🚀 Server ready at ${url}`);
+console.log(` Server ready at ${url}`);
