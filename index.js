@@ -31,7 +31,7 @@ async function context({ req }) {
   }
 }
 
-console.log("Your token:", generateToken()); 
+console.log("Generate token:", generateToken()); 
 
 const { url } = await startStandaloneServer(server, {
   context, 
